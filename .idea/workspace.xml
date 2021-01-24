@@ -8,14 +8,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="193" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1nTN7U7LApRxwJowKUFshfC9yD8" />
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+      <recent name="bg.sofia.mentormate.assignment" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FMI\Brickwork2" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -28,7 +57,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Brickwork">
+  <component name="RunManager" selected="JUnit.BrickworkTest.testBrickworkSmall2">
     <configuration name="Brickwork" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bg.sofia.mentormate.assignment.Brickwork" />
       <module name="Brickwork2" />
@@ -42,23 +71,59 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="bg.sofia.mentormate.assignment.Main" />
+    <configuration name="BrickworkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Brickwork2" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BrickworkTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrickworkTest.testBrickworkLarge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Brickwork2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BrickworkTest" />
+      <option name="METHOD_NAME" value="testBrickworkLarge" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrickworkTest.testBrickworkSmall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Brickwork2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BrickworkTest" />
+      <option name="METHOD_NAME" value="testBrickworkSmall" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrickworkTest.testBrickworkSmall2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Brickwork2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BrickworkTest" />
+      <option name="METHOD_NAME" value="testBrickworkSmall2" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Brickwork" />
+      <item itemvalue="JUnit.BrickworkTest.testBrickworkSmall2" />
+      <item itemvalue="JUnit.BrickworkTest" />
+      <item itemvalue="JUnit.BrickworkTest.testBrickworkLarge" />
+      <item itemvalue="JUnit.BrickworkTest.testBrickworkSmall" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BrickworkTest.testBrickworkSmall2" />
+        <item itemvalue="JUnit.BrickworkTest.testBrickworkLarge" />
+        <item itemvalue="JUnit.BrickworkTest.testBrickworkSmall" />
         <item itemvalue="Application.Brickwork" />
+        <item itemvalue="JUnit.BrickworkTest" />
       </list>
     </recent_temporary>
   </component>
@@ -74,5 +139,10 @@
       <updated>1611409953424</updated>
     </task>
     <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Brickwork2$BrickworkTest_testBrickworkMedium.ic" NAME="BrickworkTest.testBrickworkMedium Coverage Results" MODIFIED="1611504841242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Brickwork2$BrickworkTest.ic" NAME="BrickworkTest Coverage Results" MODIFIED="1611504850784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Brickwork2$BrickworkTest_testBrickworkSmall.ic" NAME="BrickworkTest.testBrickworkSmall Coverage Results" MODIFIED="1611507045091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Brickwork {
 
-    HashMap<Integer, Cell> getCellsFromArray(int[][] firstLayer, int M, int N) {
+    public HashMap<Integer, Cell> getCellsFromArray(int[][] firstLayer, int M, int N) {
         HashMap<Integer, Cell> cells = new HashMap<>();
         int i, j;
         int id = 0;
@@ -19,14 +19,14 @@ public class Brickwork {
         return cells;
     }
 
-    boolean areTwoCellsNeighbours(Cell one, Cell two) {
+    public boolean areTwoCellsNeighbours(Cell one, Cell two) {
         return one.getRow() == two.getRow() && one.getColumn() == two.getColumn() - 1 ||
                 one.getRow() == two.getRow() && one.getColumn() == two.getColumn() + 1 ||
                 one.getRow() == two.getRow() - 1 && one.getColumn() == two.getColumn() ||
                 one.getRow() == two.getRow() + 1 && one.getColumn() == two.getColumn();
     }
 
-    boolean[][] createAdjacencyMatrix(int[][] layer, int M, int N) {
+    public boolean[][] createAdjacencyMatrix(int[][] layer, int M, int N) {
         int cellsCount = M*N;
         HashMap<Integer, Cell> cells = getCellsFromArray(layer, M, N);
         boolean[][] matrix = new boolean[cellsCount][cellsCount];
@@ -35,7 +35,8 @@ public class Brickwork {
             for (j = 0; j < cellsCount; j++) {
                 Cell firstCell = cells.get(i);
                 Cell secondCell = cells.get(j);
-                if (firstCell.getValue() != secondCell.getValue() && areTwoCellsNeighbours(firstCell, secondCell)) {
+                if (firstCell.getValue() != secondCell.getValue() &&
+                        areTwoCellsNeighbours(firstCell, secondCell)) {
                     matrix[i][j] = true;
                 } else {
                     matrix[i][j] = false;
@@ -45,7 +46,7 @@ public class Brickwork {
         return matrix;
     }
 
-    boolean bipartiteMatching(boolean[][] matrix, int matrixSize, int vertexFromSetOne,
+    public boolean bipartiteMatching(boolean[][] matrix, int matrixSize, int vertexFromSetOne,
                               boolean[] visited, int[] assigned)
     {
         int vertexFromSetTwo;
@@ -67,7 +68,7 @@ public class Brickwork {
         return false;
     }
 
-    int[] perfectBipartiteMatching(boolean[][] matrix, int matrixSize) {
+    public int[] perfectBipartiteMatching(boolean[][] matrix, int matrixSize) {
 
         int[] assigned = new int[matrixSize];
 
@@ -97,7 +98,7 @@ public class Brickwork {
         return assigned;
     }
 
-    void printSolution(int[] assigned, int M, int N, int[][] firstLayer) {
+    public void printSolution(int[] assigned, int M, int N, int[][] firstLayer) {
         int[][] solution = new int[M][N];
         HashMap<Integer, Cell> cells = getCellsFromArray(firstLayer, M, N);
         int value = 1;
@@ -119,11 +120,11 @@ public class Brickwork {
                 System.out.print(solution[i][j]);
                 System.out.print(" ");
             }
-            System.out.println();
+            System.out.print("\n");
         }
     }
 
-    void brickwork(int[][] firstLayer, int M, int N) {
+    public void brickwork(int[][] firstLayer, int M, int N) {
         boolean[][] matrix = createAdjacencyMatrix(firstLayer, M, N);
         int matrixSize = M * N;
         int[] assigned = perfectBipartiteMatching(matrix, matrixSize);

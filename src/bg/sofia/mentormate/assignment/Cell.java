@@ -35,4 +35,21 @@ public class Cell {
     public void setValue(int value) {
         this.value = value;
     }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Cell)) {
+            return false;
+        }
+
+        Cell c = (Cell) o;
+
+        return row == ((Cell) o).row && column == ((Cell) o).column &&
+                value == ((Cell) o).value;
+    }
 }
