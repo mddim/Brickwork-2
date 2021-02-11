@@ -135,6 +135,35 @@ public class Brickwork {
         printSolution(assigned, M, N, firstLayer);
     }
 
+    private boolean validNeighbours(int[][] matrix, int x, int y, int M, int N) {
+        int differentNeighbours = 0;
+        int currentValue = matrix[x][y];
+        if (y >= N - 1 || matrix[x][y + 1] != currentValue) {
+            differentNeighbours++;
+        }
+        if (y <= 0 || matrix[x][y - 1] != currentValue) {
+            differentNeighbours++;
+        }
+        if (x <= 0 || matrix[x - 1][y] != currentValue) {
+            differentNeighbours++;
+        }
+        if (x >= M - 1 || matrix[x + 1][y] != currentValue) {
+            differentNeighbours++;;
+        }
+        return differentNeighbours == 3;
+    }
+
+    private boolean validateInputLayer(int[][] layer, int M, int N) {
+        for (int i = 1; i < M; i++) {
+            for (int j = 1; j < N; j++) {
+                if (!validNeighbours(layer, i, j, M, N)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public static void main (String[] args) {
         int M, N;
         Scanner in = null;
@@ -143,8 +172,18 @@ public class Brickwork {
 
             System.out.println("Enter number of rows");
             M = in.nextInt();
+            while (M % 2 != 0) {
+                System.out.println("Number of rows should be an even number\n" +
+                        "Enter again");
+                M = in.nextInt();
+            }
             System.out.println("Enter number of columns");
             N = in.nextInt();
+            while (N % 2 != 0) {
+                System.out.println("Number of columns should be an even number\n" +
+                        "Enter again");
+                N = in.nextInt();
+            }
 
             int[][] firstLayer = new int[M][N];
 
@@ -156,6 +195,17 @@ public class Brickwork {
             }
 
             Brickwork brickwork = new Brickwork();
+
+            while (!brickwork.validateInputLayer(firstLayer, M, N)) {
+                System.out.println("Invalid layer\n" +
+                        "Enter first layer bricks");
+                for (int i = 0; i < M; i++) {
+                    for (int j = 0; j < N; j++) {
+                        firstLayer[i][j] = in.nextInt();
+                    }
+                }
+            }
+
             brickwork.brickwork(firstLayer, M, N);
         }
         catch (Exception ex) {

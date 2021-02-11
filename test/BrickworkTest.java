@@ -118,8 +118,8 @@ class BrickworkTest {
         };
         brickwork.brickwork(layer, M, N);
         String solution = "Second layer:\n" +
-                            "1 2 3 4 4 5 6 6\n" +
-                            "1 2 3 7 7 5 8 8 ";
+                            "1 2 3 4 4 5 6 6 \n" +
+                            "1 2 3 7 7 5 8 8";
         assertEquals(solution, out.toString().trim());
     }
 
