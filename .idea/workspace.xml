@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e954569-b2da-44e0-8a67-66061ecf4275" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brickwork2/META-INF/Brickwork2.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Brickwork2/bg/sofia/mentormate/assignment/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Brickwork2/bg/sofia/mentormate/assignment/Brickwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Brickwork2/bg/sofia/mentormate/assignment/Brickwork.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Brickwork2/BrickworkTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Brickwork2/BrickworkTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bg/sofia/mentormate/assignment/Brickwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/sofia/mentormate/assignment/Brickwork.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/BrickworkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BrickworkTest.java" afterDir="false" />
@@ -69,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BrickworkTest.testBrickworkLarge">
+  <component name="RunManager" selected="JUnit.BrickworkTest">
     <configuration name="Brickwork" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bg.sofia.mentormate.assignment.Brickwork" />
       <module name="Brickwork2" />
@@ -131,11 +129,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BrickworkTest.testBrickworkLarge" />
-        <item itemvalue="Application.Brickwork" />
-        <item itemvalue="JUnit.BrickworkTest.testBrickworkMedium" />
         <item itemvalue="JUnit.BrickworkTest" />
         <item itemvalue="JUnit.BrickworkTest.testBrickworkSmall2" />
+        <item itemvalue="JUnit.BrickworkTest.testBrickworkLarge" />
+        <item itemvalue="JUnit.BrickworkTest.testBrickworkMedium" />
+        <item itemvalue="Application.Brickwork" />
       </list>
     </recent_temporary>
   </component>

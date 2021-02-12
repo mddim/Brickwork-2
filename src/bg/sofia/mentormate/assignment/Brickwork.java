@@ -1,6 +1,7 @@
 package bg.sofia.mentormate.assignment;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Brickwork {
@@ -26,40 +27,38 @@ public class Brickwork {
                 one.getRow() == two.getRow() + 1 && one.getColumn() == two.getColumn();
     }
 
-    public boolean[][] createAdjacencyMatrix(int[][] layer, int M, int N) {
+    public HashMap<Integer, LinkedList<Integer>> createGraph(int[][] layer, int M, int N) {
         int cellsCount = M*N;
         HashMap<Integer, Cell> cells = getCellsFromArray(layer, M, N);
-        boolean[][] matrix = new boolean[cellsCount][cellsCount];
+        HashMap<Integer, LinkedList<Integer>> graph = new HashMap<>();
         int i, j;
+
         for (i = 0; i < cellsCount; i++) {
+            LinkedList<Integer> edges = new LinkedList<>();
             for (j = 0; j < cellsCount; j++) {
                 Cell firstCell = cells.get(i);
                 Cell secondCell = cells.get(j);
                 if (firstCell.getValue() != secondCell.getValue() &&
                         areTwoCellsNeighbours(firstCell, secondCell)) {
-                    matrix[i][j] = true;
-                } else {
-                    matrix[i][j] = false;
+                    edges.add(j);
                 }
             }
+            graph.put(i, edges);
         }
-        return matrix;
+        return graph;
     }
 
-    public boolean bipartiteMatching(boolean[][] matrix, int matrixSize, int vertexFromSetOne,
+    public boolean bipartiteMatching(HashMap<Integer, LinkedList<Integer>> graph, int vertexFromSetOne,
                               boolean[] visited, int[] assigned)
     {
         int vertexFromSetTwo;
-        for (vertexFromSetTwo = 0; vertexFromSetTwo < matrixSize; vertexFromSetTwo++)
-        {
-
-            if (matrix[vertexFromSetOne][vertexFromSetTwo] && !visited[vertexFromSetTwo])
-            {
+        LinkedList<Integer> edges = graph.get(vertexFromSetOne);
+        for (Integer edge : edges) {
+            vertexFromSetTwo = edge;
+            if (!visited[vertexFromSetTwo]) {
                 visited[vertexFromSetTwo] = true;
-
-                if (assigned[vertexFromSetTwo] < 0 || bipartiteMatching(matrix, matrixSize, assigned[vertexFromSetTwo],
-                        visited, assigned))
-                {
+                if (assigned[vertexFromSetTwo] < 0 || bipartiteMatching(graph, assigned[vertexFromSetTwo],
+                        visited, assigned)) {
                     assigned[vertexFromSetTwo] = vertexFromSetOne;
                     return true;
                 }
@@ -68,7 +67,7 @@ public class Brickwork {
         return false;
     }
 
-    public int[] perfectBipartiteMatching(boolean[][] matrix, int matrixSize) {
+    public int[] perfectBipartiteMatching(HashMap<Integer, LinkedList<Integer>> graph, int matrixSize) {
 
         int[] assigned = new int[matrixSize];
 
@@ -86,7 +85,7 @@ public class Brickwork {
             for (i = 0; i < matrixSize; ++i)
                 visited[i] = false;
 
-            if (bipartiteMatching(matrix, matrixSize, vertexFromSetOne, visited, assigned)) {
+            if (bipartiteMatching(graph, vertexFromSetOne, visited, assigned)) {
                 result++;
             }
         }
@@ -125,9 +124,9 @@ public class Brickwork {
     }
 
     public void brickwork(int[][] firstLayer, int M, int N) {
-        boolean[][] matrix = createAdjacencyMatrix(firstLayer, M, N);
+        HashMap<Integer, LinkedList<Integer>> graph = createGraph(firstLayer, M, N);
         int matrixSize = M * N;
-        int[] assigned = perfectBipartiteMatching(matrix, matrixSize);
+        int[] assigned = perfectBipartiteMatching(graph, matrixSize);
         if (assigned == null) {
             System.out.println("-1 Solution doesn't exist!");
             return;
